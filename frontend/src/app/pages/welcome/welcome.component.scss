@@ -1,72 +1,7 @@
 .container {
   background-color: red;
   overflow: scroll;
+   scroll-behavior: smooth;
   height: 100vh;
-  scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
 }
-
-h1 {
-  font-family: 'Abril Fatface', cursive;
-  font-size: 18px;
-}
-@keyframes text {
-  from {
-    opacity: 0;
-  transform: translate(-60%, -60%);
-  }
-  to {opacity: 1;
-   transform: translate(-50%, -50%);}
-}
- .section {
-    min-height: 90vh;
-  scroll-snap-align: start;
-   scroll-snap-stop: always;
-  position: relative;
-  padding: 20px;
- }
-
-  .content {
-     position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-    animation-name: text;
-  animation-duration: 1.5s;
- }
-
-#one {
-  background-color: green;
-}
-#two {
-  background-color: coral;
-}
-#three {
-  background-color: black;
-}
-#four {
-  background-color: blue;
-}
-#zero {
-  background-color: yellow;
-}
-
-.down-arrow {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  animation-name: arrow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-.left-arrow {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-  transform: translate(0%, -50%);
-  animation-name: arrow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-

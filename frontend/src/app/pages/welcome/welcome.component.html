@@ -1,44 +1,6 @@
 <div id="body" class="container">
-  <section id="zero" class="section">
-    <div class="content">
-
-      <h1>¿Buscáis problemas?</h1>
-      <p>Me gustan los problemas.<br>
-        Me gustan cuando aparecen de repente, así, sin avisar.<br>
-        Me gustan porque puedo rastrearlos, seguir las pistas hasta encontrar dónde se esconden y contemplarlos, a veces
-        durante horas.
-        <br><br>
-        Los analizo, los zarandeo... los pongo del revés y les pregunto constantemente: "oye, ¿y si...?"<br>
-        Podría pasarme un día entero dividiéndolos en trocitos, simplemente para volverlos a juntar.<br><br>
-
-        Me gusta hablar sobre ellos (¿a quién no?), escuchar sus historias, sus victorias y sus derrotas para
-        comprenderlos mejor, preguntar a cualquiera que pase: '¡ey!¿conoces este problema?'.<br><br>
-
-        Me gustan sus diferentes formas, tamaños y colores; especialmente con sabor a tostadas y olor a café.<br>
-        Pero lo que más me gusta de ellos, es cuando se marchan.<br><br>
-
-        No porque deje de tener un problema...sino por todo lo que he ganado mientras lo tenía.</p>
-    </div>
-    <i class="material-icons md-48 down-arrow">expand_more</i>
-
-  </section>
-
-  <section id="one" class="section">
-    <h1>O cómo descubrí que me gusta escribir mientras busco trabajo</h1>
-    <i class="material-icons md-48 down-arrow">expand_more</i>
-  </section>
-
-  <section id="two" class="section">
-    <h1>O cómo descubrí que me gusta escribir mientras busco trabajo</h1>
-    <i class="material-icons md-48 down-arrow">expand_more</i>
-  </section>
-
-  <section id="three" class="section">
-    <h1>O cómo descubrí que me gusta escribir mientras busco trabajo</h1>
-    <i class="material-icons md-48 down-arrow">expand_more</i>
-  </section>
-
-  <section id="four" class="section">
-    <h1>O cómo descubrí que me gusta escribir mientras busco trabajo</h1>
-  </section>
+  <app-textsection *ngFor="let section of textList;index as i" [id]="i" [title]="textList[i].title"
+    [text]="textList[i].text" [bgColor]="textList[i].bgColor || '#999563'"
+    [textColor]="textList[i].textColor || '#FFF'">
+  </app-textsection>
 </div>
