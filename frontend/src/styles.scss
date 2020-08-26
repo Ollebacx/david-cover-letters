@@ -2,10 +2,28 @@
 *{
   margin: 0;
   padding: 0;
+  // cursor: pointer;
 }
 html, body {
   height: 100vh;
   overflow: hidden;
+}
+// body {
+//  font-family: 'Work Sans', sans-serif;
+// }
+
+// h1, h2, h3, h4, h5, h6 {
+//  font-family: 'Crimson Text', serif;
+// }
+body {
+ font-family: 'Chivo', sans-serif;
+ font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Playfair Display', serif;
+ font-weight: 700;
+ font-style: italic;
 }
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -19,4 +37,7 @@ html, body {
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 ::-webkit-scrollbar {
     display: none;
+}
+:focus {
+  outline: 0px;
 }
