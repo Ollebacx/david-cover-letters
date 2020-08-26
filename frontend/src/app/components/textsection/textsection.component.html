@@ -1,7 +1,9 @@
-<section id="number-{{id}}" class="section" [ngStyle]="{'background-color': bgColor}">
+<section id="{{title}}" class="section" [ngStyle]="{'background-color': bgColor}">
+ <div class="title">
+   <span>{{date}}</span>
+   <h1>{{title}}</h1>
+  </div>
   <div class="content">
-    <h1 [ngStyle]="{'color': textColor}">{{title}}</h1>
     <pre [ngStyle]="{'color': textColor}">{{text}}</pre>
   </div>
-  <a href="#number-{{id + 1}}"> <i class="material-icons md-48 down-arrow">expand_more</i></a>
 </section>

@@ -11,7 +11,8 @@ export class TextsectionComponent implements OnInit {
   @Input() bgColor: string;
   @Input() textColor: string;
   @Input() id: number;
-  
+  @Input() date: string;
+
   constructor() { }
 
   ngOnInit(): void {
