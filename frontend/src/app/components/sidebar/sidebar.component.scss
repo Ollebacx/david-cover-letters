@@ -1,0 +1,27 @@
+.menu {
+  height: 40px;
+  width: 80vh;
+  position: fixed; /* Make it stick, even on scroll */
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10000;
+  transform: rotate(90deg) translate(-50%, 0);
+  transform-origin: left bottom;
+}
+
+.round-button, .round-button:hover {
+  margin-right: 4px;
+  padding: 1px;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: 100%;
+  box-shadow: 2px 0px 1px #e2e2e2;
+  cursor: pointer;
+}
+.round-button:active {
+  box-shadow: 0px 0px 0px #e2e2e2;
+  transform: translateX(2px);
+}
