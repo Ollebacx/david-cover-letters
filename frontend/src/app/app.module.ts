@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { TextsectionComponent } from './components/textsection/textsection.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ScriptComponent } from './pages/script/script.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    TextsectionComponent
+    TextsectionComponent,
+    SidebarComponent,
+    NavbarComponent,
+    HomeComponent,
+    ScriptComponent
   ],
   imports: [
     BrowserModule,
