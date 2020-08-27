@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { SectionInfo } from '../../classes/section-info'
+// import { map, mapTo, filter, switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-script',
@@ -8,7 +10,18 @@ import { SectionInfo } from '../../classes/section-info'
 })
 export class ScriptComponent implements OnInit {
   textList: Array<SectionInfo>
-  constructor() {
+  id: string
+  url: string
+  user: string
+  scriptPosition: number
+
+  constructor(public router: Router, private route: ActivatedRoute) {
+    // this.url = route.snapshot.url.join('');
+    // this.user = route.snapshot.data.user;
+    router.events.subscribe(val => {
+      this.id = route.snapshot.params.id;
+      this.scriptPosition = parseInt(this.id)-1
+    });
     this.textList = [
       {
         title: '¿Buscáis problemas?',

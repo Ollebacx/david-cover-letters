@@ -1,6 +1,6 @@
 <div id="body" class="container">
-  <p>script works!</p>
-  <!-- <app-textsection *ngFor="let section of textList;index as i" [id]="i" [title]="section.title" [text]="section.text"
-    [bgColor]="section.bgColor || '#999563'" [textColor]="section.textColor || '#FFF'" [date]="section.date">
-  </app-textsection> -->
+  <p>script works!</p>{{id}}
+  <app-textsection  [title]="textList[scriptPosition].title" [text]="textList[scriptPosition].text"
+    [bgColor]="textList[scriptPosition].bgColor || '#999563'" [textColor]="textList[scriptPosition].textColor || '#FFF'" [date]="textList[scriptPosition].date">
+  </app-textsection>
 </div>
