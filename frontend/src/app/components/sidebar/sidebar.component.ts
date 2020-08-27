@@ -24,12 +24,19 @@ export class SidebarComponent implements OnInit {
     }
   }
 
+  stringConverter(number: number) {
+    return number.toString().padStart(2, "0")
+  }
   nextPage() {
     this.pagerCounter = parseInt(this.pager)
     if (this.pagerCounter < this.textList.length) {
       this.pagerCounter++;
-      this.router.navigateByUrl(`scripts/${(this.pagerCounter - 1).toString().padStart(2, "0")}`)
-      this.pager = this.pagerCounter.toString().padStart(2, "0")
+      this.router.navigateByUrl(`scripts/${this.stringConverter(this.pagerCounter - 1)}`)
+      this.pager = this.stringConverter(this.pagerCounter)
+    } else {
+      this.pagerCounter = 1
+        this.router.navigate([''])
+      this.pager = this.stringConverter(this.pagerCounter)
     }
   }
 
@@ -37,12 +44,16 @@ export class SidebarComponent implements OnInit {
     this.pagerCounter = parseInt(this.pager)
     if (this.pagerCounter != 1) {
       this.pagerCounter--
-      if (this.pagerCounter === 1) {
+      if (this.pagerCounter === 1 || this.pagerCounter === 1) {
         this.router.navigate([''])
       } else {
-        this.router.navigateByUrl(`scripts/${(this.pagerCounter - 1).toString().padStart(2, "0")}`)
+        this.router.navigateByUrl(`scripts/${this.stringConverter(this.pagerCounter - 1)}`)
       }
-      this.pager = this.pagerCounter.toString().padStart(2, "0")
+      this.pager = this.stringConverter(this.pagerCounter)
+    } else {
+      this.pagerCounter = 9
+      this.router.navigateByUrl(`scripts/${(this.pagerCounter - 1).toString().padStart(2, "0")}`)
+      this.pager = this.stringConverter(this.pagerCounter)
     }
   }
 }
