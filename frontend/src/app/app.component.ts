@@ -10,9 +10,8 @@ import { map, mapTo, filter, switchMap, tap } from 'rxjs/operators';
 export class AppComponent {
   title = 'frontend';
   textList: Array<SectionInfo>
-  navigationEnd
+  
   routePathParam
-  subRoutePathParam
 
   constructor(public router: Router, private route: ActivatedRoute) {
     this.textList = [
