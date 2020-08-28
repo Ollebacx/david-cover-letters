@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
     }
     this.transitionDirection.emit(transitionDirectionObject);
     console.log(transitionDirectionObject);
-    if (this.pageNumber < this.textList.length) {
+    if (this.pageNumber < this.textList.length + 1) {
       this.pageNumber++;
       this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
     } else {
@@ -40,11 +40,14 @@ export class SidebarComponent implements OnInit {
       offsetLeave: 100
     }
     this.transitionDirection.emit(transitionDirectionObject);
-    if (this.pageNumber != 1) {
+    if (this.pageNumber == 1) {
+      this.pageNumber = this.textList.length
+      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+    } else if (this.pageNumber == 2) {
       this.pageNumber--
-      this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
+      this.router.navigate([''])
     } else {
-      this.pageNumber = 9
+      this.pageNumber--
       this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
     }
   }
