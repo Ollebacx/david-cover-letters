@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SectionInfo } from '../../classes/section-info'
 @Component({
@@ -8,52 +8,48 @@ import { SectionInfo } from '../../classes/section-info'
 })
 export class SidebarComponent implements OnInit {
   @Input() textList: Array<SectionInfo>;
-  @Input() scriptNumber
+  @Input() pageNumber
+  @Output()
+  transitionDirection = new EventEmitter<object>();
 
-  pager
-  pagerCounter
-  routePathParam;
-
-  constructor(public router: Router, private route: ActivatedRoute) {  }
+  constructor(public router: Router, private route: ActivatedRoute) {
+    }
 
   ngOnInit() {
-    if (this.scriptNumber == "home") {
-      this.pager = "01"
-    } else {
-      this.pager = (parseInt(this.scriptNumber) + 1).toString().padStart(2, "0")
-    }
   }
 
-  stringConverter(number: number) {
-    return number.toString().padStart(2, "0")
-  }
   nextPage() {
-    this.pagerCounter = parseInt(this.pager)
-    if (this.pagerCounter < this.textList.length) {
-      this.pagerCounter++;
-      this.router.navigateByUrl(`scripts/${this.stringConverter(this.pagerCounter - 1)}`)
-      this.pager = this.stringConverter(this.pagerCounter)
+    let transitionDirectionObject = {
+      offsetEnter: 100,
+      offsetLeave: -100
+    }
+    this.transitionDirection.emit(transitionDirectionObject);
+    console.log(transitionDirectionObject);
+    if (this.pageNumber < this.textList.length) {
+      this.pageNumber++;
+      this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
     } else {
-      this.pagerCounter = 1
+      this.pageNumber = 1
         this.router.navigate([''])
-      this.pager = this.stringConverter(this.pagerCounter)
     }
   }
 
   previousPage() {
-    this.pagerCounter = parseInt(this.pager)
-    if (this.pagerCounter != 1) {
-      this.pagerCounter--
-      if (this.pagerCounter === 1 || this.pagerCounter === 1) {
+    let transitionDirectionObject = {
+      offsetEnter: -100,
+      offsetLeave: 100
+    }
+    this.transitionDirection.emit(transitionDirectionObject);
+    if (this.pageNumber != 1) {
+      this.pageNumber--
+      if (this.pageNumber === 1) {
         this.router.navigate([''])
       } else {
-        this.router.navigateByUrl(`scripts/${this.stringConverter(this.pagerCounter - 1)}`)
+        this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
       }
-      this.pager = this.stringConverter(this.pagerCounter)
     } else {
-      this.pagerCounter = 9
-      this.router.navigateByUrl(`scripts/${(this.pagerCounter - 1).toString().padStart(2, "0")}`)
-      this.pager = this.stringConverter(this.pagerCounter)
+      this.pageNumber = 9
+      this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
     }
   }
 }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { SectionInfo } from './classes/section-info'
-import { map, mapTo, filter, switchMap, tap } from 'rxjs/operators';
-import { slideInAnimation } from './animation'
+import { map, mapTo, filter, switchMap, tap, startWith, pairwise } from 'rxjs/operators';
+import { slideInAnimation } from './animations/animation'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,9 +16,11 @@ export class AppComponent {
   title = 'frontend';
   textList: Array<SectionInfo>
 
-  routePathParam
-
+  routePathParam: number;
+  offsetEnter: number = 100
+  offsetLeave: number = -100
   constructor(public router: Router, private route: ActivatedRoute) {
+
     this.textList = [
       {
         title: '¿Buscáis problemas?',
@@ -89,15 +92,19 @@ export class AppComponent {
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd)).subscribe((route: ActivatedRoute) => {
         if (this.route.snapshot.firstChild.url[1]) {
-          this.routePathParam = this.route.snapshot.firstChild.url[1].path
+          this.routePathParam = (parseInt(this.route.snapshot.firstChild.url[1].path) + 1)
         } else {
-          this.routePathParam = "home"
+          this.routePathParam = 1
         }
       })
   }
   prepareRoute(outlet) {
-    console.log(outlet.activatedRoute.snapshot);
     // return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
     return outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
+  }
+
+  setAnimationParams(transitionDirection) {
+    this.offsetEnter = transitionDirection.offsetEnter;
+    this.offsetLeave = transitionDirection.offsetLeave;
   }
 }

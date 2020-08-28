@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
-<app-sidebar *ngIf="routePathParam" [textList]="textList" [scriptNumber]="routePathParam"></app-sidebar>
-<div [@routeAnimations]="prepareRoute(outlet)">
+<app-sidebar *ngIf="routePathParam" [textList]="textList" [pageNumber]="routePathParam"
+  (transitionDirection)="setAnimationParams($event)"></app-sidebar>
+<div [@routeAnimations]="{value:prepareRoute(outlet), params: {offsetEnter:offsetEnter, offsetLeave:offsetLeave}}">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>
