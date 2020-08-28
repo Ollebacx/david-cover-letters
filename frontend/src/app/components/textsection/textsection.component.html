@@ -1,7 +1,7 @@
 <section id="{{title}}" class="section" [ngStyle]="{'background-color': bgColor}">
  <div class="title">
    <span>{{date}}</span>
-   <h1>{{title}}</h1>
+   <h1 [@flyInOut]>{{title}}</h1>
   </div>
   <div class="content">
     <pre [ngStyle]="{'color': textColor}">{{text}}</pre>
