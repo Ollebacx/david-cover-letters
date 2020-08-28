@@ -1,3 +1,5 @@
 <app-navbar></app-navbar>
 <app-sidebar *ngIf="routePathParam" [textList]="textList" [scriptNumber]="routePathParam"></app-sidebar>
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

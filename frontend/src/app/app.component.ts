@@ -2,15 +2,19 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { SectionInfo } from './classes/section-info'
 import { map, mapTo, filter, switchMap, tap } from 'rxjs/operators';
+import { slideInAnimation } from './animation'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    slideInAnimation
+  ]
 })
 export class AppComponent {
   title = 'frontend';
   textList: Array<SectionInfo>
-  
+
   routePathParam
 
   constructor(public router: Router, private route: ActivatedRoute) {
@@ -90,5 +94,10 @@ export class AppComponent {
           this.routePathParam = "home"
         }
       })
+  }
+  prepareRoute(outlet) {
+    console.log(outlet.activatedRoute.snapshot);
+    // return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
   }
 }
