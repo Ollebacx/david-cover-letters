@@ -27,23 +27,12 @@
     }
   }
 
-
   .content {
     padding: 50px;
-    animation-name: text;
-    animation-duration: 1.5s;
     max-width: 600px ;
     min-width: auto ;
     width: 80% ;
   }
-}
-@keyframes text {
-  from {
-    opacity: 0;
-  transform: translate(-60%, -60%);
-  }
-  to {opacity: 1;
-    transform: translate(-50%, -50%);}
 }
 
 pre {
@@ -65,21 +54,5 @@ pre {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-@keyframes arrow {
-  from {
-  transform: translate(-50%, -50%);
-  }
-  to {
-    transform: translate(-50%, -65%);
-  }
-}
-.left-arrow {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-  transform: translate(0%, -50%);
-  animation-name: arrow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
+
 
