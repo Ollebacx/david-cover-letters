@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit {
   transitionDirection = new EventEmitter<object>();
 
   constructor(public router: Router, private route: ActivatedRoute) {
-    }
+  }
 
   ngOnInit() {
   }
@@ -30,7 +30,7 @@ export class SidebarComponent implements OnInit {
       this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
     } else {
       this.pageNumber = 1
-        this.router.navigate([''])
+      this.router.navigate([''])
     }
   }
 
@@ -42,11 +42,7 @@ export class SidebarComponent implements OnInit {
     this.transitionDirection.emit(transitionDirectionObject);
     if (this.pageNumber != 1) {
       this.pageNumber--
-      if (this.pageNumber === 1) {
-        this.router.navigate([''])
-      } else {
-        this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
-      }
+      this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
     } else {
       this.pageNumber = 9
       this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
