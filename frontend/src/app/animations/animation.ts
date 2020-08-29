@@ -26,16 +26,17 @@ export const slideInAnimation =
       ], { optional: true }),
       //
       query(':enter', [
-        style({ transform: 'translateY({{offsetEnter}}%)' })
+        style({ transform: 'translateY({{offsetEnter}}%)', opacity: '0' })
       ], { optional: true }),
       //
       query(':leave', [
-        style({ transform: 'translateY(0%)' })
+        style({ transform: 'translateY(0%)', opacity: '1' })
       , animateChild()], { optional: true }),
       //
       group([
         query(':leave', [
-          animate('700ms ease-in-out', style({ transform: 'translateY({{offsetLeave}}%)' }))
+          animate('700ms ease-in-out', style({ transform: 'translateY({{offsetLeave}}%)', opacity: '0' })),
+
         ], { optional: true }),
         //
         // query('@inOutAnimation', [
@@ -43,7 +44,7 @@ export const slideInAnimation =
         // ], { optional: true }),
         sequence([
           query(':enter', [
-            animate('700ms ease-in-out', style({ transform: 'translateY(0%)' }))
+            animate('700ms ease-in-out', style({ transform: 'translateY(0%)', opacity: '1' }))
           ], { optional: true }),
           // query('@inOutAnimation', [
           //   animate('1s ease-out',
