@@ -2,28 +2,36 @@
 *{
   margin: 0;
   padding: 0;
+  --textcolor: #3D555E;
   // cursor: pointer;
 }
 html, body {
   height: 100vh;
   overflow: hidden;
+  color:#3D555E;
 }
 // body {
 //  font-family: 'Work Sans', sans-serif;
 // }
-
 // h1, h2, h3, h4, h5, h6 {
 //  font-family: 'Crimson Text', serif;
 // }
 body {
- font-family: 'Chivo', sans-serif;
- font-weight: 300;
+//  font-family: 'Chivo', sans-serif;
+ font-family: 'Oswald', sans-serif;
+//  font-Family: 'Quattrocento', Serif;
+
+//  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
- font-family: 'Playfair Display', serif;
- font-weight: 700;
- font-style: italic;
+ font-family: 'Oswald', sans-serif;
+ color:#3D555E;
+//  font-family: 'Nothing You Could Do', cursive;
+//  font-family: 'Permanent Marker', cursive;
+// font-family: 'Covered By Your Grace', cursive;
+// font-family: 'Yellowtail', cursive;
+//  font-weight: 900;
 }
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -49,4 +57,39 @@ h1, h2, h3, h4, h5, h6 {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
 }
