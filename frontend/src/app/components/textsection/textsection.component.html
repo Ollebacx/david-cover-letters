@@ -1,9 +1,11 @@
-<section id="{{title}}" class="section" [ngStyle]="{'background-color': bgColor}">
- <div class="title">
-   <span>{{date}}</span>
-   <h1 [@inOutAnimation]>{{title}}</h1>
+<section id="{{title}}" class="section" [ngStyle]="{'background-color': 'rgba(0,0,0,0)'}">
+  <div class="title col-3 col-s-12">
+    <div class="wrapper col-4 col-s-12">
+      <span>{{date}}</span>
+      <h1 [@inOutAnimation] [ngStyle]="{'color': '#f1f1f1'}" >{{title}}</h1>
+    </div>
   </div>
-  <div class="content">
-    <pre [ngStyle]="{'color': textColor}">{{text}}</pre>
+  <div class="content col-9">
+      <pre [ngStyle]="{'color': 'rgba(255,255,255,0.6'}">{{text}}</pre>
   </div>
 </section>
