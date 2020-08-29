@@ -1,0 +1,15 @@
+ #body{
+  //  background-image: radial-gradient(circle,#141414,black);
+  --background: #ecf1f8;
+  --gray: #a5b1c6;
+  background-color: var(--background);
+   height: 100vh;;
+ }
+ .footer {
+   width: 100%;
+   background-color: white;
+   height: 5px;
+   position: fixed;
+   bottom: 0;
+   z-index: 2000;
+   }

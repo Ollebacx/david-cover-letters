@@ -9,6 +9,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ScriptComponent } from './pages/script/script.component';
+import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ScriptComponent } from './pages/script/script.component';
     SidebarComponent,
     NavbarComponent,
     HomeComponent,
-    ScriptComponent
+    ScriptComponent,
+    LeftSidebarComponent
   ],
   imports: [
     BrowserModule,

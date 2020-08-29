@@ -1,0 +1,100 @@
+.menu {
+  height: 100px;
+  width: 100vh;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  // justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+  font-size: 40px;
+  color: #ffffff;
+}
+.rotate{
+  transform: rotate(-90deg) translate(-100px, 0);
+  transform-origin: left top;
+}
+.button {
+  margin-left:55px;
+  font-family: 'Oswald';
+  font-weight: 500;
+  font-size: 16px;
+  color: #3D555E;
+  border: 1px solid #f4fcff;
+  border-radius: 50px;
+  height: 35px;
+  padding: 0px 15px;
+  background-color: #ecf1f8;
+  transition: 0.3s border ease-in-out, 0.3s box-shadow ease-in-out;
+}
+.button:hover{
+  cursor: pointer;
+  transition: 0.3s border ease-in-out, 0.3s box-shadow ease-in-out;
+  border: 1px solid #ecf1f8;
+  box-shadow:
+    8px -8px 20px 0px #fff9,
+    5px -5px 6px 0px #fff9,
+    -8px 8px 20px 0px #0001,
+    -5px 5px 6px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+}
+.icon-linkedin, icon-linkedin:hover {
+font-size: x-large;
+cursor: pointer;
+}
+.brand{
+  align-self: flex-start;
+  margin-left: auto;
+}
+.social-media {
+  border: none;
+  margin-left:20px;
+  background-color: #ecf1f8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.round-button, .round-button:hover {
+  margin: 5px;
+  padding: 10px;
+  // border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 100%;
+  // box-shadow: 2px 0px 1px #e2e2e2;
+  transition: 0.2s box-shadow ease-in-out;
+  cursor: pointer;
+  box-shadow:
+    -8px -8px 20px 0px #fff9,
+    -5px -5px 6px 0px #fff9,
+    8px 8px 20px 0px #0001,
+    5px 5px 6px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+}
+.round-button:active {
+  // box-shadow: 0px 0px 0px #e2e2e2;
+  // transform: translateX(2px);
+  box-shadow:
+    0px 0px 0px 0px #fff9,
+    0px 0px 0px 0px #fff9,
+    0px 0px 0px 0px #0001,
+    0px 0px 0px 0px #0001,
+    inset -8px -8px 20px 0px #fff9,
+    inset -5px -5px 6px 0px #fff9,
+    inset 8px 8px 20px 0px #0003,
+    inset 5px 5px 6px 0px #0001;
+}
