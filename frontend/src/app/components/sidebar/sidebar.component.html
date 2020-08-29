@@ -1,9 +1,15 @@
 <div class="menu noselect">
-  <span><a href="https://www.linkedin.com/in/david-cabello-oquendo/" target="_blank">david cabello oquendo</a></span>
- <span>
-  <span><strong>{{pageNumber}}</strong></span> / {{textList.length + 1}}</span>
-  <span>
-    <span class="material-icons round-button md-18" (click)="previousPage()">keyboard_arrow_left</span>
-    <span class="material-icons round-button md-18" (click)="nextPage()">keyboard_arrow_right</span>
-  </span>
+  <div class="pager">
+    <strong>{{pageNumber}}</strong>
+    <div class="material-icons md-36">remove</div>
+    <strong>{{textList.length + 1}}</strong>
+  </div>
+  <div class="controller">
+    <div class="button">
+      <span class="material-icons round-button md-18" (click)="previousPage()">keyboard_arrow_up</span>
+    </div>
+    <div class="button">
+      <span class="material-icons round-button md-18" (click)="nextPage()">keyboard_arrow_down</span>
+    </div>
+  </div>
 </div>
