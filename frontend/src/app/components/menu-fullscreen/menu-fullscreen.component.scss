@@ -62,8 +62,8 @@ header {
   display:block;
   position:fixed;
   z-index:4;
-  top:50%;
-  transform: translate(0,-50%);
+  top:100px;
+  transform: translate(100% , 0%);
   cursor:pointer;
 
   .bar {
@@ -102,11 +102,11 @@ header {
       }
 
       &:nth-child(1) {
-        transform:translateY(10px) rotate(45deg);
+        transform:translateY(8px) rotate(45deg);
       }
 
       &:nth-child(3) {
-        transform:translateY(-10px) rotate(-45deg);
+        transform:translateY(-8px) rotate(-45deg);
       }
     }
   }
@@ -117,70 +117,67 @@ header {
 }
 
 .content {
-  width: 45px;
+  width: 25px;
   height: 24px;
   position: fixed;
-  top: 50%;
   left: 65px;
   transform: translateY(-50%);
 }
 .content_animation {
-  width: 50px;
+  width: 30px;
   height: 24px;
   position: fixed;
-  top: 50%;
   left: 65px;
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 5;
 }
 .content span {
- width: 45px;
-    height: 4px;
-    margin-bottom: 3px;
+ width: 25px;
+    height: 3px;
     background: rgb(41, 41, 41);
     position: absolute;
 }
 #line_two{
-  top: 10px;
+  top: 8px;
 
 }
 #line_three{
-  top: 20px;
+  top: 16px;
 }
 
 .line {
     width: 0px;
-    height: 4px;
+    height: 3px;
     margin-bottom: 3px;
     background:#ecf1f8;
     position: absolute;
-    }
+  }
  .content_animation:hover #line_animation_one{
     -webkit-animation: line_r_animation 0.6s 1;
    animation: line_r_animation 0.6s 1;
 }
  .content_animation:hover #line_animation_two{
-   top: 10px;
+   top: 8px;
    -webkit-animation: line_r_animation 0.6s 0.1s 1;
    animation: line_r_animation 0.6s 0.1s 1;
 }
  .content_animation:hover #line_animation_three{
-   top: 20px;
+   top: 16px;
       -webkit-animation: line_r_animation 0.6s 0.2s 1;
    animation: line_r_animation 0.6s 0.2s 1;
 }
 
 @-webkit-keyframes line_r_animation {
-    0%   {right: calc(2% + 60px); width: 0px;}
-    35%   {right: calc(2% + 0px); width: 60px;}
+    0%   {right: calc(2% + 50px); width: 0px;}
+    35%   {right: calc(2% + 0px); width: 50px;}
     70%   {right: calc(2% + 0px); width: 0px;}
     100%   {right: calc(2% + 0px); width: 0px;}
 }
 
 @keyframes line_r_animation {
-    0%   {right: calc(2% + 60px); width: 0px;}
-    35%   {right: calc(2% + 0px); width: 60px;}
+    0%   {right: calc(2% + 50px); width: 0px;}
+    35%   {right: calc(2% + 0px); width: 50px;}
     70%   {right: calc(2% + 0px); width: 0px;}
     100%   {right: calc(2% + 0px); width: 0px;}
 }
