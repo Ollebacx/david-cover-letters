@@ -2,36 +2,26 @@
 *{
   margin: 0;
   padding: 0;
-  --textcolor: #3D555E;
+  --textcolor: #6D7587;
   // cursor: pointer;
 }
 html, body {
   height: 100vh;
   overflow: hidden;
-  color:#3D555E;
+  color:#6D7587;
 }
-// body {
-//  font-family: 'Work Sans', sans-serif;
-// }
-// h1, h2, h3, h4, h5, h6 {
-//  font-family: 'Crimson Text', serif;
-// }
+
 body {
-//  font-family: 'Chivo', sans-serif;
- font-family: 'Oswald', sans-serif;
+ font-family: 'Chivo', sans-serif;
+//  font-family: 'Oswald', sans-serif;
 //  font-Family: 'Quattrocento', Serif;
 
 //  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
- font-family: 'Oswald', sans-serif;
- color:#3D555E;
-//  font-family: 'Nothing You Could Do', cursive;
-//  font-family: 'Permanent Marker', cursive;
-// font-family: 'Covered By Your Grace', cursive;
-// font-family: 'Yellowtail', cursive;
-//  font-weight: 900;
+ font-family: 'Chivo', serif;
+ color:#6D7587;
 }
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
