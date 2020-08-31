@@ -15,11 +15,16 @@ export class TextsectionComponent implements OnInit {
   @Input() text: string;
   @Input() bgColor: string;
   @Input() textColor: string;
-  @Input() id: number;
   @Input() date: string;
 
+  onScroll(event: any) {
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      console.log("End");
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {
   }
+
 }

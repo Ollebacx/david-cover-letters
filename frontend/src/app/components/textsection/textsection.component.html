@@ -1,11 +1,15 @@
-<section id="{{title}}" class="section" [ngStyle]="{'background-color': 'rgba(0,0,0,0)'}">
-  <div class="title col-3 col-s-12">
-    <div class="wrapper col-4 col-s-12">
-      <span>{{date}}</span>
-      <h1 [@inOutAnimation] [ngStyle]="{'color': '#f1f1f1'}" >{{title}}</h1>
-    </div>
+<section class="section">
+  <div class="header col-3 col-s-12">
+    <span>{{date}}</span>
+    <h1 [@inOutAnimation] [ngStyle]="{'color': '#f1f1f1'}">{{title}}</h1>
   </div>
-  <div class="content col-9">
-      <pre [ngStyle]="{'color': 'rgba(255,255,255,0.6'}">{{text}}</pre>
+  <div class="content col-9" >
+    <pre [ngStyle]="{'color': 'rgba(255,255,255,0.6'}" (scroll)="onScroll($event)">{{text}}</pre>
   </div>
 </section>
+
+
+    <div id="scroll-down" class="demo">
+      <div><span id="mouse"></span>Scroll</div>
+    </div>
+
