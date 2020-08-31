@@ -1,44 +1,86 @@
 .section {
   position: relative;
-
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  overflow: visible;
+  margin: 0 auto;
   .header {
-    text-align: left;
-  }
-
-  .content {
-    pre {
-      background-color: transparent;
-      border: none;
-      color: #222222 !important;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0%;
-      transform: translate(0%, 30%);
-      font-size: 1.4em;
-      word-break: keep-all;
-      overflow: auto;
-      margin: auto;
-      font-Family: 'Quattrocento', Serif;
-      line-height: 1.5;
-      text-align: left;
-      max-width: 800px;
-      width: 80vw;
-      height: 50vh;
+    // width: 20%;
+    h1 {
+      z-index: 30;
+      background-color: #ecf1f8;
+      top: 40px;
+      right: 0%;
+      position: fixed;
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.8);
+      transform: translate(-50%, 0%);
+      text-align: end;
+      p {
+        margin-bottom: -8px;
+      }
     }
   }
+
+
+  .content {
+    // background-color: red;
+    width: 100%;
+    max-width: 700px;
+    height: calc(100vh - 280px);
+    position: absolute;
+    padding: 140px 0px;
+    overflow-y: scroll;
+
+    pre {
+      background-color: transparent;
+      color:#6D7587 !important;
+      border: none;
+      font-size: 21px;
+      word-break: keep-all;
+      margin: auto;
+      font-Family: 'Chivo', sans-serif;
+      line-height: 1.5;
+      text-align: left;
+      z-index: 1;
+    }
+  }
+}
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 3px;
+  // background: rgba(0, 0, 0, 0.4);
+}
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 3px;
+  background: rgba(0, 0, 0, 0.8);
+  width: 0%;
+}
+
+.footer-gradient {
+  width: 100%;
+  height: 150px;
+  // background-color: #ecf1f8;
+   background-image: linear-gradient(to top, #ecf1f8 50%,#d8dde400 100%) ;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 1s ease-in-out;
 }
 
 #scroll-down div {
   padding-top: 40px;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   z-index: 2;
   display: inline-block;
   -webkit-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
-  color: #fff;
+  color: #6d758771;
   font : normal 800 18px;
   letter-spacing: .1em;
   #mouse {
@@ -48,7 +90,7 @@
     width: 20px;
     height: 35px;
     margin-left: -10px;
-    border: 2px solid #fff;
+    border: 2px solid #6d758738;
     border-radius: 50px;
     box-sizing: border-box;
   }

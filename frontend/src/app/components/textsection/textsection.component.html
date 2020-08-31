@@ -1,15 +1,25 @@
-<section class="section">
-  <div class="header col-3 col-s-12">
-    <span>{{date}}</span>
-    <h1 [@inOutAnimation] [ngStyle]="{'color': '#f1f1f1'}">{{title}}</h1>
+<!-- <div class="frame-top"></div> -->
+<section class="section" (scroll)="onScroll($event)">
+  <div class="header col-12" >
+    <h1 [@inOutAnimation]>
+      <p>
+        {{title}}
+      </p>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+    </h1>
+    <!-- <span>{{date}}</span> -->
   </div>
-  <div class="content col-9" >
-    <pre [ngStyle]="{'color': 'rgba(255,255,255,0.6'}" (scroll)="onScroll($event)">{{text}}</pre>
+  <div class="content col-12" (scroll)="onScroll($event)">
+    <pre id="body-text" (scroll)="onScroll($event)">{{text}}</pre>
   </div>
 </section>
+<div class="footer-gradient" *ngIf="hasScroll && scrolled ==0" [@inOutAnimation]>
+  <!-- {{scrolled}} -->
+  <div id="scroll-down" class="demo">
+    <div><span id="mouse"></span>Scroll</div>
+  </div>
+</div>
 
-
-    <div id="scroll-down" class="demo">
-      <div><span id="mouse"></span>Scroll</div>
-    </div>
 
