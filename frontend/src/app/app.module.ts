@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ScriptComponent } from './pages/script/script.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
+import { MenuFullscreenComponent } from './components/menu-fullscreen/menu-fullscreen.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.com
     NavbarComponent,
     HomeComponent,
     ScriptComponent,
-    LeftSidebarComponent
+    LeftSidebarComponent,
+    MenuFullscreenComponent
   ],
   imports: [
     BrowserModule,
