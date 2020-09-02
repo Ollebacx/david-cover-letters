@@ -37,39 +37,35 @@ export class TextsectionComponent implements OnInit {
   @Input() bgColor: string;
   @Input() textColor: string;
   @Input() date: string;
-  winScroll;
   height;
   scrolled = 0;
   hasScroll;
-  element
-  style
 
-  onScroll(event: any) {
-    console.log('scrolled');
-    this.winScroll = event.target.scrollTop;
-    this.height = event.target.scrollHeight - event.target.offsetHeight;
-    this.scrolled = (this.winScroll / this.height) * 100;
-    document.getElementById("myBar").style.width = this.scrolled + "%";
-    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
-      console.log("End");
-    }
-  }
   constructor() {
   }
 
   ngOnInit(): void {
-    console.log(this.hasScroll);
-
-    var elem = document.getElementById('body-text');
-    if (elem.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)) {
-      // Bottom is out of viewport
-      this.hasScroll = true;
-      console.log(this.hasScroll);
+    var elem
+    setTimeout(() => {
+      elem = document.getElementById('body-text');
+      if (elem.scrollHeight > (window.innerHeight - 140)) {
+        this.hasScroll = true;
+      }
+      else {
+        this.hasScroll = false;
+      }
+    }, 700);//Wait for enter animation time between routes
+  }
+  
+  onScroll(event: any) {
+    console.log('scrolled');
+    var winScroll = event.target.scrollTop;
+    this.height = event.target.scrollHeight - event.target.offsetHeight;
+    this.scrolled = (winScroll / this.height) * 100;
+    document.getElementById("myBar").style.width = this.scrolled + "%";
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      console.log("End");
     }
-    else {
-      this.hasScroll = false;
-    }
-
   }
 }
 

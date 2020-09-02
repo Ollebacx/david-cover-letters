@@ -6,20 +6,16 @@
   overflow: visible;
   margin: 0 auto;
   .header {
-    // width: 20%;
+    width: 100%;
+    height: 25vh;
+    position: absolute;
+    background-color: #5378ac;
+    text-align: center;
+    // padding-top: 70px;
+    z-index: 3;
     h1 {
-      z-index: 30;
-      background-color: #ecf1f8;
-      top: 40px;
-      right: 0%;
-      position: fixed;
-      font-size: 18px;
+      font-size: 3rem;
       color: rgba(0, 0, 0, 0.8);
-      transform: translate(-50%, 0%);
-      text-align: end;
-      p {
-        margin-bottom: -8px;
-      }
     }
   }
 
@@ -30,17 +26,19 @@
     max-width: 700px;
     height: calc(100vh - 280px);
     position: absolute;
-    padding: 140px 0px;
+    padding: 25vh 0px;
     overflow-y: scroll;
 
     pre {
       background-color: transparent;
       color:#6D7587 !important;
       border: none;
-      font-size: 21px;
+      font-size: 1.6rem;
       word-break: keep-all;
       margin: auto;
-      font-Family: 'Chivo', sans-serif;
+      font-Family: 'Merriweather', serif;
+      font-style: italic;
+
       line-height: 1.5;
       text-align: left;
       z-index: 1;
@@ -49,21 +47,30 @@
 }
 /* The progress container (grey background) */
 .progress-container {
-  width: 100%;
+  width: 10rem;
   height: 3px;
-  // background: rgba(0, 0, 0, 0.4);
+  background: #484a4c;
 }
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 3px;
-  background: rgba(0, 0, 0, 0.8);
+  background: #171718;
   width: 0%;
 }
 
-.footer-gradient {
+.footer {
   width: 100%;
   height: 150px;
   // background-color: #ecf1f8;
+  //  background-image: linear-gradient(to top, #ecf1f8 50%,#d8dde400 100%) ;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  // transition: all 1s ease-in-out;
+}
+.gradient {
+  width: 100%;
+  height: 150px;
    background-image: linear-gradient(to top, #ecf1f8 50%,#d8dde400 100%) ;
   position: absolute;
   bottom: 0;
