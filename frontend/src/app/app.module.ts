@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ScriptComponent } from './pages/script/script.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 import { MenuFullscreenComponent } from './components/menu-fullscreen/menu-fullscreen.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MenuFullscreenComponent } from './components/menu-fullscreen/menu-fulls
     HomeComponent,
     ScriptComponent,
     LeftSidebarComponent,
-    MenuFullscreenComponent
+    MenuFullscreenComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
