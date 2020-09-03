@@ -53,8 +53,19 @@
     text-align: left;
     z-index: 1;
     padding-bottom: 30vh;
+    animation: enter 2s 1;
   }
 }
+}
+@keyframes enter {
+  from {
+    opacity: 0;
+margin-top: -30px;
+  }
+  to {
+    opacity: 1;
+margin-top: 0;
+  }
 }
 /* The progress container (grey background) */
 .progress-container {

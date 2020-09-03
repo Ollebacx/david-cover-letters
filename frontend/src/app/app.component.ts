@@ -99,8 +99,12 @@ export class AppComponent {
       })
   }
   prepareRoute(outlet) {
-    // return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
-    return outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
+    // console.log(outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation);
+    if (outlet.activatedRoute.snapshot.params.id) {
+      return outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
+    } else {
+      return outlet.activatedRouteData.animation;
+    }
   }
 
   setAnimationParams(transitionDirection) {
