@@ -43,7 +43,7 @@ header {
         width: 0px;
         height: 4px;
         margin: 5px 0 0;
-        transition: all 0.75s ease-in-out;
+        transition: all 0.5s ease-in-out;
         background-color: white;
       }
     }
@@ -104,11 +104,11 @@ header {
         }
 
         @for $i from 1 through 4 {
-            $t: $i * 0.1;
-            &:nth-child(#{$i}) {
-              transition:all 0.3s cubic-bezier(.6,0,.8,1.5) #{$t}s;
-            }
+          $t: $i * 0.1;
+          &:nth-child(#{$i}) {
+            transition:all 0.3s cubic-bezier(.6,0,.8,1.5) #{$t}s;
           }
+        }
       }
     }
   }
@@ -131,7 +131,6 @@ header {
     }
   }
   &+label.toggle-btn .content_animation{
-    // display: none;
     opacity: 0;
   }
 }
