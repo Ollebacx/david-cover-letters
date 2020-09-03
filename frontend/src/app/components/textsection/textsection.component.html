@@ -1,23 +1,22 @@
 <!-- <div class="frame-top"></div> -->
-<section class="section" (scroll)="onScroll($event)">
-  <div class="header col-12">
-    <h1 [@inOutAnimation]>
-      {{title}}
-    </h1>
-          <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-          </div>
-    <!-- <span>{{date}}</span> -->
-  </div>
+<div id="top" class="progress-container" *ngIf="hasScroll" [@widthIncrease]>
+  <div class="progress-bar" id="myBar"></div>
+</div>
+<section class="section">
   <div class="content col-12" (scroll)="onScroll($event)">
-    <pre id="body-text" (scroll)="onScroll($event)">{{text}}</pre>
+          <h1>
+            <div>
+              {{title}}
+            </div>
+          </h1>
+    <pre id="body-text">{{text}}</pre>
   </div>
 </section>
 <div class="footer">
   <div class="gradient" *ngIf="scrolled === 0" [@inOutAnimation]>
     <!-- {{scrolled}} -->
     <div id="scroll-down" class="demo" *ngIf="hasScroll && scrolled < 80" [@inOutAnimation]>
-      <div><span id="mouse"></span>Scroll</div>
+      <div><span id="mouse"></span></div>
     </div>
   </div>
 </div>

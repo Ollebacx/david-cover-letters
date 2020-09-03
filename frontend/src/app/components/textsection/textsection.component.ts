@@ -13,7 +13,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
           ':enter',
           [
             style({ opacity: 0 }),
-            animate('0.5s ease-out',
+            animate('1s ease-out',
               style({ opacity: 1 }))
           ]
         ),
@@ -21,12 +21,34 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
           ':leave',
           [
             style({ opacity: 1 }),
-            animate('0.5s ease-in',
+            animate('1s ease-in',
               style({ opacity: 0 }))
           ]
         )
       ]
+    ),
+    trigger(
+      'widthIncrease',
+      [
+        transition(
+          ':enter',
+          [
+            style({ width: '0%'}),
+            animate('1.5s ease-in-out',
+              style({ width: '100%'}))
+          ]
+        ),
+        transition(
+          ':leave',
+          [
+            style({ width: '100%' }),
+            animate('0.5s ease-in',
+              style({ width: '0%' }))
+          ]
+        )
+      ]
     )
+
   ]
 })
 
@@ -48,17 +70,18 @@ export class TextsectionComponent implements OnInit {
     var elem
     setTimeout(() => {
       elem = document.getElementById('body-text');
+      console.log(elem.scrollHeight);
       if (elem.scrollHeight > (window.innerHeight - 140)) {
         this.hasScroll = true;
       }
       else {
         this.hasScroll = false;
       }
-    }, 700);//Wait for enter animation time between routes
+      document.body.style.setProperty('--scroll', `${this.scrolled}`);
+    }, 800);//Wait for enter animation time between routes
   }
-  
+
   onScroll(event: any) {
-    console.log('scrolled');
     var winScroll = event.target.scrollTop;
     this.height = event.target.scrollHeight - event.target.offsetHeight;
     this.scrolled = (winScroll / this.height) * 100;
@@ -66,7 +89,10 @@ export class TextsectionComponent implements OnInit {
     if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
       console.log("End");
     }
+    //SCROLL ANIMATION VAR TO BIND BOTH
+    document.body.style.setProperty('--scroll', `${winScroll}`);
   }
+
 }
 
 
