@@ -6,7 +6,7 @@
 * {
   box-sizing:border-box;
   font-family:"Raleway","sans-serif";
-  color:#555;
+  color:rgba(0, 0, 0, 0.8);
 }
 
 $th_pink:#E84A5F;
@@ -30,9 +30,23 @@ header {
       margin:0;
       position:absolute;
       left:50%;
-      top:170px;
+      bottom:0;
       transition:all 0.3s linear;
-      transform:translateX(-50%);
+      transform:translate(-50%,-50%);
+    .hover {
+      color: white;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        width: 0px;
+        height: 4px;
+        margin: 5px 0 0;
+        transition: all 0.75s ease-in-out;
+        background-color: white;
+      }
+    }
 
       li {
         transform:translateY(50px);
@@ -40,17 +54,15 @@ header {
 
         a {
           display:block;
-          font-size:2em;
+          font-size:3em;
+          font-weight: 200;
+          line-height: 1.5em;
           text-decoration:none;
-          padding:10px 0;
           text-align:center;
-          color:#fff;
-          font-weight:bold;
+          color:#fff !important;
           transition:all 0.2s linear;
 
-          &:hover {
-            color:$th_pink;
-          }
+
         }
       }
     }
@@ -61,8 +73,8 @@ header {
   display:block;
   position:fixed;
   z-index:4;
-  top:100px;
-  transform: translate(100% , 0%);
+  top:50px;
+  transform: translate(0% , 0%);
   cursor:pointer;
 
   .bar {
@@ -76,11 +88,20 @@ header {
     visibility:visible;
 
     ul {
-      top:70px;
-
+      top:50%;
       li {
         transform:translateY(0px);
         opacity:1;
+        a {
+          &:hover {
+           cursor: pointer;
+            .hover {
+              &:before {
+                width: 100%;
+              }
+            }
+          }
+        }
 
         @for $i from 1 through 4 {
             $t: $i * 0.1;
@@ -180,3 +201,5 @@ header {
     70%   {right: calc(2% + 0px); width: 0px;}
     100%   {right: calc(2% + 0px); width: 0px;}
 }
+
+
