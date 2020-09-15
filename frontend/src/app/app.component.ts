@@ -44,29 +44,29 @@ export class AppComponent {
         date: '05 de Agosto de 2020'
       },
       {
-        title: `1`,
-        text: '',
+        title: `Declaración indecente`,
+        text: '¡Hola! ¿Cómo va? Me llamo David Cabello, soy fan incondicional de & Rosàs y ha llegado el día. Después de años de trabajo y sufrimiento, hoy es el día. Hoy es el día que llamo a vuestra puerta con los nervios de un niño que se va dormir la noche del 5 de enero. Toco el timbre flojito para no hacer mucho ruido y no molestar, pero por dentro deseo que el sonido llegue a todos los rincones de la agencia. Llevo traje y corbata para parecer una persona formal, aunque se aprecia a simple vista que no visto así normalmente. Solo espero que al abrir la puerta me veáis como yo os miro a vosotros, con ganas de todo: de descubrir, de aprender, de reír, de café… Ya, ya sé que no esperabais una visita tan repentina.Así que si necesitáis tiempo para recibirme no pasa nada, esperaré aquí mismo: https://bellaco.portfoliobox.net/ Que tengamos buen día. ¡Un saludo!',
         bgColor: '#EBA68D',
         textColor: '#1D5CAB',
         date: '05 de Agosto de 2020'
       },
       {
-        title: `2`,
-        text: '',
+        title: `Untitled`,
+        text: 'Muy buenos días, Os escribo con especial interés en la oferta de prácticas publicada en Domestika.Pienso que mi perfil puede ajustarse bastante bien a las tareas y aptitudes requeridos en el puesto de trabajo, al mismo tiempo que lo encuentro realmente estimulante para mi desarrollo profesional.En este correo adjunto mi currículum vitae, para cualquier duda o cuestión no dudéis en poneros en contacto conmigo.Muchas gracias y un saludo.David Cabello Oquendo',
         bgColor: '#EBA68D',
         textColor: '#1D5CAB',
         date: '05 de Agosto de 2020'
       },
       {
-        title: `3`,
-        text: 'fsadfsfsfsf',
+        title: `Untitled`,
+        text: 'Buenos días Carlos, Le escribo con especial interés sobre la oferta de trabajo como desarrollador web en IOMarketing publicada en Domestika.En este correo le adjunto mi currículum vitae, creo que se ajusta bastante al perfil descrito en la oferta.Estaré encantado de aclarar cualquier pregunta o información adicional que necesite, no dude en ponerse en contacto conmigo.Muchas gracias por su atención, un saludo.David Cabello Oquendo',
         bgColor: '#8AD4E3',
         textColor: '#224E8B',
         date: '05 de Agosto de 2020'
       },
       {
-        title: `4`,
-        text: 'fdsfsffafdsa',
+        title: `¿Por qué eres el candidato perfecto?`,
+        text: 'Soy el candidato perfecto... porque me cansé de serlo. Después de estudiar una carrera, me cansé de ser el candidato perfecto pero tener que servir copas por la noche; después de estudiar un ciclo superior, me cansé de ser el candidato perfecto para ver si me queda en el almacén la talla 42 en negro; después de estudiar un máster, me cansé de ser el candidato perfecto para ser el encargado de las fotocopias, me cansé... Me cansé de cargar camiones, de aguantar niños, de los clientes maleducados, de limpiar baños, de fregar platos... Pero no me arrepiento de nada. Todo lo que hice me enseñó. Gracias a todo eso aprendí que solo estoy cansado. Que simplemente tengo que parar por un segundo a respirar, recuperar el aliento y volver a poner todo mi esfuerzo en dar el siguiente paso. ¿Me enseñáis el camino?',
         bgColor: '#01623D',
         textColor: '#EFAF2F',
         date: '05 de Agosto de 2020'

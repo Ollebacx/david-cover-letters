@@ -13,7 +13,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
           ':enter',
           [
             style({ opacity: 0 }),
-            animate('1s ease-out',
+            animate('0.3s ease-out',
               style({ opacity: 1 }))
           ]
         ),
@@ -21,7 +21,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
           ':leave',
           [
             style({ opacity: 1 }),
-            animate('1s ease-in',
+            animate('0.7s ease-in',
               style({ opacity: 0 }))
           ]
         )
@@ -34,7 +34,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
           ':enter',
           [
             style({ width: '0%'}),
-            animate('1.5s ease-in-out',
+            animate('1s ease-in-out',
               style({ width: '100%'}))
           ]
         ),
