@@ -1,0 +1,70 @@
+.typewriter {
+    font-family: 'Anonymous Pro', monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 1s steps(20), blink .2s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 400;
+    border-right: 4px solid rgb(5, 5, 5);
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from {
+        width: 0%
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: rgb(51, 51, 51);
+    }
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  overflow: visible;
+  margin: 0 auto;
+      h1 {
+        width: 50px;
+        animation: header 150s linear;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1s);
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        width: 100%;
+        // text-align: center;
+        font-size: 4rem;
+        // font-weight: 800;
+        color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 15vh;
+        div {
+        width: 70%;
+        }
+      }
+
+
+.content {
+  // background-color: red;
+  width: 100%;
+  max-width: 700px;
+  height: calc(100vh - 280px);
+  position: absolute;
+  padding: 40vh 0px;
+  overflow-y: scroll;
+}}
