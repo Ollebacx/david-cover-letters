@@ -6,9 +6,6 @@ import {
   transition,
   query,
   animateChild,
-  group,
-  sequence
-  // ...
 } from '@angular/animations';
 
 export const slideInAnimation =
@@ -111,25 +108,13 @@ export const slideInAnimation =
         })
       ], { optional: true }),
       query(':enter', [
-        style({ transform: 'translateY(-100%)' })
-      ], { optional: true }),
+        style({ transform: 'translateY(-100%)', background: 'var(--background)' }),
+        animate('700ms ease-in-out', style({ transform: 'translateY(0%)' })),
+        animateChild()], { optional: true }),
       query(':leave', [
-        style({ transform: 'translateY(0%)' })
-        , animateChild()], { optional: true }),
-      //
-      group([
-        query(':leave', [
-          animate('700ms ease-in-out', style({ transform: 'translateY(100%)' })),
-
-        ], { optional: true }),
-        sequence([
-          query(':enter', [
-            animate('700ms ease-in-out', style({ transform: 'translateY(0%)' }))
-          ], { optional: true })
-        ])
-      ]),
-      //
-      query(':enter', animateChild(), { optional: true }),
+        style({ transform: 'translateY(0%)' }),
+        animate('700ms ease-in-out', style({ transform: 'translateY(100%)' })),
+        animateChild()], { optional: true }),
     ])
   ]);
 

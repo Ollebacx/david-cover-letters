@@ -3,3 +3,27 @@
    height: 100vh;
    background-color: rgb(30,30, 30);
 }
+.content {
+  width: 25px;
+  height: 24px;
+  position: fixed;
+  right: 30px;
+  transform: translateY(-50%);
+  &:hover{
+    cursor: pointer;
+  }
+}
+.content span {
+ width: 25px;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+}
+#line_one {
+  transform: translateY(8px) rotate(45deg);
+}
+#line_two{
+  top: 8px;
+  transform: rotate(-45deg);
+
+}

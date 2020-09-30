@@ -14,13 +14,15 @@ export class ScriptComponent implements OnInit {
   url: string
   user: string
   scriptPosition: number
+  pageNumber: number
+  offsetEnter: number = 100
+  offsetLeave: number = -100
 
   constructor(public router: Router, private route: ActivatedRoute) {
-    // this.url = route.snapshot.url.join('');
-    // this.user = route.snapshot.data.user;
     router.events.subscribe(val => {
       this.id = route.snapshot.params.id;
-      this.scriptPosition = parseInt(this.id)-1
+      this.scriptPosition = parseInt(this.id) - 1;
+      this.pageNumber = this.scriptPosition + 1
     });
     this.textList = [
       {
@@ -71,4 +73,8 @@ export class ScriptComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setAnimationParams(transitionDirection) {
+    this.offsetEnter = transitionDirection.offsetEnter;
+    this.offsetLeave = transitionDirection.offsetLeave;
+  }
 }

@@ -1,12 +1,5 @@
-<app-menu-fullscreen></app-menu-fullscreen>
 <div id="body">
-  <!-- <app-navbar (transitionDirection)="setAnimationParams($event)"></app-navbar> -->
-  <app-sidebar *ngIf="routePathParam" [textList]="textList" [pageNumber]="routePathParam"
-    (transitionDirection)="setAnimationParams($event)"></app-sidebar>
-    <app-left-sidebar></app-left-sidebar>
   <div [@routeAnimations]="{value:prepareRoute(outlet), params: {offsetEnter:offsetEnter, offsetLeave:offsetLeave}}">
     <router-outlet #outlet="outlet"></router-outlet>
-    <!-- <div class="footer"></div> -->
   </div>
-
 </div>

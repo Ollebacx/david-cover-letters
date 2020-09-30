@@ -19,18 +19,18 @@ export class SidebarComponent implements OnInit {
   }
 
   nextPage() {
-    let transitionDirectionObject = {
-      offsetEnter: 100,
-      offsetLeave: -100
-    }
-    this.transitionDirection.emit(transitionDirectionObject);
-    console.log(transitionDirectionObject);
-    if (this.pageNumber < this.textList.length + 1) {
+    // let transitionDirectionObject = {
+    //   offsetEnter: 100,
+    //   offsetLeave: -100
+    // }
+    // this.transitionDirection.emit(transitionDirectionObject);
+    // console.log(transitionDirectionObject);
+    if (this.pageNumber < this.textList.length) {
       this.pageNumber++;
-      this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
+      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
     } else {
       this.pageNumber = 1
-      this.router.navigate([''])
+      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
     }
   }
 
@@ -43,12 +43,9 @@ export class SidebarComponent implements OnInit {
     if (this.pageNumber == 1) {
       this.pageNumber = this.textList.length
       this.router.navigateByUrl(`scripts/${this.pageNumber}`)
-    } else if (this.pageNumber == 2) {
-      this.pageNumber--
-      this.router.navigate([''])
     } else {
       this.pageNumber--
-      this.router.navigateByUrl(`scripts/${this.pageNumber - 1}`)
+      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
     }
   }
 }

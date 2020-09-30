@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
+  previousPage
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  close() {
+    console.log(window.history);
+  }
 }
