@@ -1,3 +1,8 @@
+
+.body {
+  background-color: #CFEF39;
+}
+
 .section {
   position: relative;
   width: 100%;
@@ -22,12 +27,6 @@
         width: 70%;
         }
       }
-.content {
-  // background-color: red;
-  width: 100%;
-  max-width: 700px;
-  height: calc(100vh - 280px);
-  position: absolute;
-  padding: 40vh 0px;
-  overflow-y: scroll;
-}}
+      height: calc(100vh - 280px);
+      padding: 40vh 0px;
+}
