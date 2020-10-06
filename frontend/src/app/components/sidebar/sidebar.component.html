@@ -1,15 +1,9 @@
-<div class="menu noselect">
-  <div class="pager">
-    <strong>{{pageNumber}}</strong>
-    <div class="material-icons md-36">remove</div>
-    <strong>{{textList.length}}</strong>
-  </div>
-  <div class="controller">
-    <div class="button">
-      <span class="material-icons round-button md-18" (click)="nextPage()">keyboard_arrow_right</span>
-    </div>
-    <div class="button">
-      <span class="material-icons round-button md-18" (click)="previousPage()">keyboard_arrow_left</span>
-    </div>
-  </div>
+<div class="pager noselect">
+  <strong>{{pageNumber}}</strong>
+  <div class="material-icons md-36">remove</div>
+  <strong>{{textList.length}}</strong>
+</div>
+<div class="controller">
+  <span class="material-icons round-button md-18" (click)="previousPage()">keyboard_arrow_left</span>
+  <span class="material-icons round-button md-18" (click)="nextPage()">keyboard_arrow_right</span>
 </div>

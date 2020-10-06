@@ -1,12 +1,21 @@
 .section {
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 650px;
   height: auto;
   overflow: visible;
-  margin: 0 auto;
-      h1 {
-        width: 50px;
+    // background-color: yellow;
+  margin: auto;
+  .content {
+    // background-color: red;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    margin: 0 auto;
+    // margin-left: 30px;
+    padding: 30vh 30px;
+    overflow-y: scroll;
+    h1 {
         animation: header 150s linear;
         animation-play-state: paused;
         animation-delay: calc(var(--scroll) * -1s);
@@ -14,41 +23,32 @@
         animation-fill-mode: both;
         width: 100%;
         // text-align: center;
-        font-size: 4rem;
+        font-size: 3.8rem;
         // font-weight: 800;
         color: rgba(0, 0, 0, 0.8);
-        margin-bottom: 15vh;
-        div {
-        width: 70%;
-        }
+        line-height: 1;
+        // margin-bottom: 15vh;
+        // div {
+        // width: 70%;
+        // }
       }
 
-
-.content {
-  // background-color: red;
-  width: 100%;
-  max-width: 700px;
-  height: calc(100vh - 280px);
-  position: absolute;
-  padding: 40vh 0px;
-  overflow-y: scroll;
-
-  pre {
-    background-color: transparent;
-    color:#6D7587 !important;
-    border: none;
-    font-size: 1.8rem;
-    word-break: keep-all;
-    margin: auto;
-    font-Family: 'Merriweather', sans-serif;
-    // font-style: italic;
-    line-height: 1.5;
-    text-align: left;
-    z-index: 1;
-    padding: 30vh 0  15vh 0;
-    animation: enter 2s 1;
+    pre {
+      background-color: transparent;
+      color:#1e2024 !important;
+      border: none;
+      font-size: 1.4rem;
+      word-break: keep-all;
+      margin: auto;
+      font-Family: 'Merriweather', sans-serif;
+      font-weight: 500;
+      line-height: 1.8;
+      text-align: left;
+      z-index: 1;
+      padding: 10vh 0 50vh 0;
+      animation: enter 2s 1;
+    }
   }
-}
 }
 @keyframes enter {
   from {
@@ -135,7 +135,7 @@ margin-top: 0;
 @keyframes header {
   to {
     opacity: 0;
-    margin-bottom:50px;
+    margin-bottom:30;
     // height: 20vh;
   }
 }
