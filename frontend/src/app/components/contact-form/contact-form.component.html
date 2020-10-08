@@ -1,0 +1,20 @@
+<form class="form">
+  <div>
+    <span id="nameHelp">Tu nombre es</span>
+    <input type="text" class="lined" name="Fullname" [(ngModel)]="fullName" autofocus maxlength="12">
+  </div>
+  <div class="par" *ngIf="fullName.length > 2" [@toggle]="fullName.length > 2">
+    <div class="uno">¡Un placer conocerte!</div>
+    <div class="dos">
+      <span>Cuentáme en 4-5 palabras por qué me escribes:</span>
+      <input id="subjectInput" type="text" class="lined" name="Subject" [(ngModel)]="subject" maxlength="35">
+    </div>
+  </div>
+  <div class="par" *ngIf="subject.length > 3">
+    <textarea class="form-control" name="Comment"  [(ngModel)]="message" >
+    </textarea>
+  </div>
+  <a href="mailto:dav.ollebac@gmail.com?subject=Asunto%20con%20espacios&body={{fullName}}" *ngIf="message.length > 50" class="round-button elevated">
+    <span>Enviar</span>
+  </a>
+</form>

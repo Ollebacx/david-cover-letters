@@ -22,6 +22,10 @@ export class ContactComponent implements OnInit {
       });
   }
   close() {
-    this.router.navigateByUrl(`${this.urlBack}`)
+    if (this.urlBack) {
+      this.router.navigateByUrl(`${this.urlBack}`)
+    } else {
+      this.router.navigateByUrl('/')
+    }
   }
 }

@@ -1,0 +1,112 @@
+
+* {
+  color: #ecf1f8;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.form{
+  // background-color: #fff;
+  font-family: 'Raleway',sans-serif;
+  min-width: 200px;
+  width: 60vw;
+  margin: auto;
+  margin-top: 10vh;
+  div {
+    margin-bottom: 15px;
+  }
+}
+#nameHelp {
+  height: 40px;
+  margin-right: 5px;
+}
+#subjectInput {
+  width: 300px;
+}
+.lined, .lined:focus {
+  margin-top: 10px;
+  color: #ecf1f8;
+  width: 150px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 3px solid white;
+  border-radius: 0%;
+  box-shadow: none;
+
+}
+
+.margint{
+  margin-bottom: -10px;
+  line-height: 30px;
+  padding-top:30px;
+  background-color: red;
+}
+.round-button {
+  // background-color: #fff;
+  background-color: transparent;
+  border: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #ecf1f8;
+  border-radius: 100px;
+  transition: 0.9s box-shadow ease-in-out, 1s opacity ease-in-out;
+  padding: 10px 25px;
+  span {
+    font-size: 1.6rem;
+    opacity: .3;
+    transition: .8s opacity ease-in-out;
+  }
+}
+  .elevated, .elevated:hover {
+    span {
+    opacity: 1;
+    transition: 1s opacity ease-in-out;
+    }
+    transition: 0.7s box-shadow ease-in-out;
+    cursor: pointer;
+    box-shadow:
+    -8px -8px 20px 0px #6668,
+      -5px -5px 6px 0px #6668,
+      8px 8px 20px 0px #0003,
+      5px 5px 6px 0px #0003,
+      inset 0px 0px 0px 0px #6668,
+      inset 0px 0px 0px 0px #0003,
+      inset 0px 0px 0px 0px #6668,
+      inset 0px 0px 0px 0px #0003;
+  }
+  .elevated:active {
+    transition: 0.2s box-shadow ease-in-out;
+    box-shadow:
+      0px 0px 0px 0px #6663,
+      0px 0px 0px 0px #6663,
+      0px 0px 0px 0px #0005,
+      0px 0px 0px 0px #0005,
+      inset -8px -8px 20px 0px #6663,
+      inset -5px -5px 6px 0px #6663,
+      inset 8px 8px 20px 0px #0005,
+      inset 5px 5px 6px 0px #0005;
+    }
+
+    .par {
+  height: auto;
+  overflow: hidden;
+}
+
+.uno {
+  line-height: 30px;
+  margin-top: 100px;
+}
+.dos {
+  line-height: 30px;
+}
+
+// @keyframes slideUp {
+//   0% {
+//     transform: translateY(100px);
+//   }
+//   100% {
+//     transform: translateY(0px);
+//   }
+// }
