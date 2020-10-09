@@ -1,70 +1,80 @@
 
 * {
   color: #ecf1f8;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.6rem;
 }
+h1{
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+h2{
+  font-size: 2.2rem;
+}
 .form{
-  // background-color: #fff;
   font-family: 'Raleway',sans-serif;
   min-width: 200px;
-  width: 60vw;
+  width: 80vw;
   margin: auto;
-  margin-top: 10vh;
-  div {
-    margin-bottom: 15px;
-  }
+  margin-top:15vh;
+  // height: 85vh;
+  // overflow-y: scroll;
 }
 #nameHelp {
-  height: 40px;
   margin-right: 5px;
 }
 #subjectInput {
   width: 300px;
 }
+
 .lined, .lined:focus {
   margin-top: 10px;
   color: #ecf1f8;
   width: 150px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   background-color: transparent;
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid white;
   border-radius: 0%;
   box-shadow: none;
-
 }
 
-.margint{
-  margin-bottom: -10px;
-  line-height: 30px;
-  padding-top:30px;
-  background-color: red;
+.mb-20{
+  margin-bottom: 20px;
 }
+.mb-40{
+  margin-bottom: 40px;
+}
+
 .round-button {
-  // background-color: #fff;
+  float: left;
   background-color: transparent;
   border: 0px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   color: #ecf1f8;
   border-radius: 100px;
-  transition: 0.9s box-shadow ease-in-out, 1s opacity ease-in-out;
   padding: 10px 25px;
+  cursor: default;
+  text-decoration: none;
+  margin: 30px;
+  box-shadow:none;
+  transition: 0.7s box-shadow ease-in-out;
   span {
     font-size: 1.6rem;
+    transition: .7s opacity ease-in-out;
     opacity: .3;
-    transition: .8s opacity ease-in-out;
   }
 }
   .elevated, .elevated:hover {
     span {
     opacity: 1;
-    transition: 1s opacity ease-in-out;
+    transition: 0.7s opacity ease-in-out;
     }
-    transition: 0.7s box-shadow ease-in-out;
+    visibility: visible;
+    transition: 0.4s box-shadow ease-in-out;
     cursor: pointer;
     box-shadow:
     -8px -8px 20px 0px #6668,
@@ -88,25 +98,45 @@
       inset 8px 8px 20px 0px #0005,
       inset 5px 5px 6px 0px #0005;
     }
-
-    .par {
+textarea {
+  resize: none;
+  outline: none;
+  width: 50%;
+  padding: 25px;
+  color:#57585a;
+  font-size: 1.3rem;
+  float: left;
+}
+// ANIMATIONS
+.par {
   height: auto;
   overflow: hidden;
 }
-
-.uno {
-  line-height: 30px;
-  margin-top: 100px;
+.title {
+  transform: translateY(-200px);
+  animation: slideDown 1s ease-in-out forwards .8S;
 }
-.dos {
-  line-height: 30px;
+.subtitle {
+  transform: translateY(150px);
+  animation: slideUp 1s ease-in-out forwards .8s;
 }
-
-// @keyframes slideUp {
-//   0% {
-//     transform: translateY(100px);
-//   }
-//   100% {
-//     transform: translateY(0px);
-//   }
-// }
+.name {
+  transform: translateY(150px) ;
+  animation: slideUp 1s ease-in-out forwards 2s;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

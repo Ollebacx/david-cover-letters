@@ -1,20 +1,34 @@
-<form class="form">
-  <div>
-    <span id="nameHelp">Tu nombre es</span>
-    <input type="text" class="lined" name="Fullname" [(ngModel)]="fullName" autofocus maxlength="12">
+<form class="form col- col-8 col-s-10">
+  <h1 class="title">¡CHARLEMOS!</h1>
+  <div class="par mb-20">
+    <p class="subtitle"> Siempre estoy abierto a ofertas de trabajo, palabras bonitas o café. </p>
   </div>
-  <div class="par" *ngIf="fullName.length > 2" [@toggle]="fullName.length > 2">
-    <div class="uno">¡Un placer conocerte!</div>
-    <div class="dos">
+  <div class="par mb-20">
+    <div class="name">
+      <span id="nameHelp">Para empezar, tu nombre es</span>
+      <input type="text" class="lined" name="Fullname" [(ngModel)]="fullName" maxlength="12">
+    </div>
+  </div>
+  <div class="par mb-40">
+    <div *ngIf="fullName.length > 2" [@subject-1]="fullName.length > 2">¡Un placer conocerte!</div>
+    <div *ngIf="fullName.length > 2" [@subject-2]="fullName.length > 2">
       <span>Cuentáme en 4-5 palabras por qué me escribes:</span>
       <input id="subjectInput" type="text" class="lined" name="Subject" [(ngModel)]="subject" maxlength="35">
     </div>
   </div>
-  <div class="par" *ngIf="subject.length > 3">
-    <textarea class="form-control" name="Comment"  [(ngModel)]="message" >
-    </textarea>
+  <div class="par mb-40">
+    <div *ngIf="subject.length > 3 && fullName.length > 2" [@comment-1]="fullName.length > 2">¡Genial! ¿Por qué no me
+      cuentas un poco más en profundidad?
+    </div>
   </div>
-  <a href="mailto:dav.ollebac@gmail.com?subject=Asunto%20con%20espacios&body={{fullName}}" *ngIf="message.length > 50" class="round-button elevated">
-    <span>Enviar</span>
-  </a>
+  <div class="par" *ngIf="subject.length > 3 && fullName.length > 2"
+    [@comment-2]="subject.length > 3 && fullName.length > 2">
+    <textarea type="text" class="col- col-8 col-s-9" rows="6" name="Comment" [(ngModel)]="message" onfocus="this.innerHTML=''">
+      hola {{name}}
+    </textarea>
+    <a href="mailto:dav.ollebac@gmail.com?subject={{subject}}&body={{message}}{{fullName}}"
+      [class.elevated]="subject.length > 3 && fullName.length > 2 && message.length > 50" class="round-button">
+      <span>Enviar</span>
+    </a>
+  </div>
 </form>
