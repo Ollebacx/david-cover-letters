@@ -1,13 +1,23 @@
+.waterpage {
+  position:absolute;
+  width: 100%;
+  font-size: 100px;
+  top: 3%;
+  font-family: 'Montserrat', sans-serif;
+  color: #5d5d617e;
+  font-weight: 800;
+}
 .container {
   overflow: scroll !important;
    width: 100%;
    height: 100vh;
-   background-color: #3c3d3f;
+   background-color: #4b4b4e;
   }
 .content {
   width: 25px;
   height: 24px;
   position: fixed;
+  z-index: 5;
   right: 30px;
   top: 30px;
   transform: translateY(-50%);
