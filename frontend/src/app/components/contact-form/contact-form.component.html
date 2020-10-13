@@ -1,34 +1,46 @@
-<form class="form col- col-8 col-s-10">
-  <h1 class="title">¡CHARLEMOS!</h1>
-  <div class="par mb-20">
-    <p class="subtitle"> Siempre estoy abierto a ofertas de trabajo, palabras bonitas o café. </p>
+<div class="overlay" *ngIf="isSent">
+  <div id="over-content">
+    <h1> ¡Muchas gracias! </h1>
+    <p>
+      Te contestaré lo más pronto posible.<br>
+      Mientras tanto, échale un vistazo a mi perfil en LinkedIn
+    </p>
+    <button class="round-button lined-btn" (click)="openLinkedIn()">Ir al perfil</button>
   </div>
-  <div class="par mb-20">
-    <div class="name">
-      <span id="nameHelp">Para empezar, tu nombre es</span>
-      <input type="text" class="lined" name="Fullname" [(ngModel)]="fullName" maxlength="12">
+</div>
+
+<div class="flex-container">
+  <h1 class="title"> Manda un correo, un abrazo, un café... </h1>
+  <form class="form">
+    <!-- <div class="par mb-20"> -->
+    <!-- <p class="subtitle"> Siempre estoy abierto a ofertas de trabajo, palabras bonitas o café. </p> -->
+    <!-- </div> -->
+    <div class="par mb-20">
+      <div class="name">
+        <span id="nameHelp">Tu nombre es</span>
+        <input type="text" class="lined" name="Fullname" [(ngModel)]="fullName" maxlength="16">
+      </div>
     </div>
-  </div>
-  <div class="par mb-40">
-    <div *ngIf="fullName.length > 2" [@subject-1]="fullName.length > 2">¡Un placer conocerte!</div>
-    <div *ngIf="fullName.length > 2" [@subject-2]="fullName.length > 2">
-      <span>Cuentáme en 4-5 palabras por qué me escribes:</span>
-      <input id="subjectInput" type="text" class="lined" name="Subject" [(ngModel)]="subject" maxlength="35">
+    <div class="par mb-40">
+      <div *ngIf="fullName.length > 2" [@subject-1]="fullName.length > 2">
+        <span>Encantado de conocerte. Cuentáme en 4-5 palabras por qué me escribes:</span>
+        <input id="subjectInput" type="text" class="lined" name="Subject" [(ngModel)]="subject" maxlength="35">
+      </div>
     </div>
-  </div>
-  <div class="par mb-40">
-    <div *ngIf="subject.length > 3 && fullName.length > 2" [@comment-1]="fullName.length > 2">¡Genial! ¿Por qué no me
-      cuentas un poco más en profundidad?
+    <div class="par">
+      <div class="mb-20" *ngIf="subject.length > 8 && fullName.length > 2" [@comment-1]="fullName.length > 2">¡Genial!
+        ¿Por qué no me
+        cuentas un poco más en profundidad?
+      </div>
+      <div class="par" *ngIf="subject.length > 8 && fullName.length > 2"
+        [@comment-2]="subject.length > 8 && fullName.length > 2">
+        <textarea type="text" class="col- col-8 col-s-9" name="Comment" placeholder="Érase una vez..."
+          [(ngModel)]="message"></textarea>
+        <button (click)="mail()" [class.elevated]="subject.length > 8 && fullName.length > 2 && message.length > 50"
+          class="round-button">
+          <span>Enviar</span>
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="par" *ngIf="subject.length > 3 && fullName.length > 2"
-    [@comment-2]="subject.length > 3 && fullName.length > 2">
-    <textarea type="text" class="col- col-8 col-s-9" rows="6" name="Comment" [(ngModel)]="message" onfocus="this.innerHTML=''">
-      hola {{name}}
-    </textarea>
-    <a href="mailto:dav.ollebac@gmail.com?subject={{subject}}&body={{message}}{{fullName}}"
-      [class.elevated]="subject.length > 3 && fullName.length > 2 && message.length > 50" class="round-button">
-      <span>Enviar</span>
-    </a>
-  </div>
-</form>
+  </form>
+</div>
