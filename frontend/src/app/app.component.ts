@@ -33,12 +33,13 @@ export class AppComponent implements OnInit {
 
   prepareRoute(outlet) {
     // console.log(outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation);
-    if (outlet.activatedRoute.snapshot.params.id) {
-      return outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
-    } else {
+    // if (outlet.activatedRoute.snapshot.params.id) {
+    //   return  outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
+    // } else {
+    console.log(outlet);
       return outlet.activatedRouteData.animation;
     }
-  }
+  // }
 
   setAnimationParams(transitionDirection) {
     this.offsetEnter = transitionDirection.offsetEnter;
