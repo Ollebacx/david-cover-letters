@@ -44,7 +44,7 @@ h1 {
   // background-color: red;
   min-width: 200px;
   padding: 2rem;
-  width: 55%;
+  width: 45%;
   align-self: flex-end;
   margin-top: 10vh;
 }
@@ -56,10 +56,12 @@ h1 {
     flex-direction: column;
   }
   .title {
-    width: 99%;
+    width: 90%;
   }
   .form {
     width: calc(100% - 4rem);
+  margin-top: 0vh;
+
   }
 }
 
