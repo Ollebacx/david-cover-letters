@@ -1,22 +1,46 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SectionInfo } from '../../classes/section-info'
-// import { map, mapTo, filter, switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-script',
   templateUrl: './script.component.html',
+  animations: [
+    trigger('inOutAnimation', [
+      transition(':enter', [
+        style({ position: 'absolute', opacity: 0, transform: 'translateY(-100px)' }),
+        animate('0.4s ease-in-out',
+          style({ opacity: 1, transform: 'translateY(0px)' }))
+      ]),
+      transition(':leave', [
+        style({ position: 'absolute', opacity: 1, transform: 'translateY(0px)' }),
+        animate('0.4s ease-in-out',
+          style({ opacity: 0, transform: 'translateY(-100px)' }))
+      ]),
+    ]),
+    trigger('fadeInFadeOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.4s ease-in-out',
+          style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('0.4s ease-in-out',
+          style({ opacity: 0 }))
+      ]),
+    ]),
+
+  ],
   styleUrls: ['./script.component.scss']
 })
 export class ScriptComponent implements OnInit {
   textList: Array<SectionInfo>
   id: string
-  url: string
-  user: string
   scriptPosition: number
   pageNumber: number
-  offsetEnter: number = 100
-  offsetLeave: number = -100
+  show: boolean
 
   constructor(public router: Router, private route: ActivatedRoute) {
     router.events.subscribe(val => {
@@ -67,9 +91,9 @@ export class ScriptComponent implements OnInit {
         textColor: '#EFAF2F',
         date: '05 de Agosto de 2020'
       },
-       {
-         title: `¿Quién es David?`,
-         text: 'David es un astronauta tropical. \nLe gusta explorar y el mar. \nA veces viste raro. \nBaila en la ducha. \nDesayuna tortitas cada día. \nPrefiere el café solo. \nPatina. \nMira al cielo a menudo. \nSe enamora de colores. \nMedita. \nColecciona libretas. \nEscucha canciones nuevas. \nMadruga para coger olas. \nSe mira en el reflejo de los escaparates \nCocina peor de lo que cree. \nEs flexible. \nLe encanta oír historias. \nSuele olvidar la mascarilla al salir. \n\nY se me da fatal hablar sobre mí.',
+      {
+        title: `¿Quién es David?`,
+        text: 'David es un astronauta tropical. \nLe gusta explorar y el mar. \nA veces viste raro. \nBaila en la ducha. \nDesayuna tortitas cada día. \nPrefiere el café solo. \nPatina. \nMira al cielo a menudo. \nSe enamora de colores. \nMedita. \nColecciona libretas. \nEscucha canciones nuevas. \nMadruga para coger olas. \nSe mira en el reflejo de los escaparates \nCocina peor de lo que cree. \nEs flexible. \nLe encanta oír historias. \nSuele olvidar la mascarilla al salir. \n\nY se me da fatal hablar sobre mí.',
         bgColor: '#01623D',
         textColor: '#EFAF2F',
         date: '05 de Agosto de 2020'
@@ -77,11 +101,9 @@ export class ScriptComponent implements OnInit {
     ]
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
-  setAnimationParams(transitionDirection) {
-    this.offsetEnter = transitionDirection.offsetEnter;
-    this.offsetLeave = transitionDirection.offsetLeave;
+  setAnimationParams(showElements) {
+    this.show = showElements.change
   }
 }

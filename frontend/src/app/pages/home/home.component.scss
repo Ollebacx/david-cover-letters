@@ -1,34 +1,84 @@
-
 .body {
-  // background-color: #b9b9b9;
+  // background-color: whitesmoke;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+.waterpage {
+  position:absolute;
+  font-size: 100px;
+  line-height: 100px;
+  top: 40vh;
+  left: 35px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff6b;
+  // background-color: red;
+  font-weight: 800;
+  z-index: 0;
+}
+.pull-line {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 100vh;
+  right: 30px;
+  transform: rotate(90deg) translate(-50%, 0);
+  .line {
+    width: 70px;
+    height: 2px;
+    // background-color: white;
+    background-color: rgb(54, 54, 54);
+  }
+  .icon-chevron-right {
+    color:  rgb(54, 54, 54);
+    margin-top: 3px;
+  }
+}
+.round-button {
+  background-color: transparent;
+  // border: 2px solid rgb(54, 54, 54);
+  border: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 100px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow:none;
+  transition: 0.7s background-color ease-in-out;
+  font-size: .8rem;
+  &:hover {
+    transition: 0.7s background-color ease-in-out;
+    background-color: #ffffff6b;
+  }
 }
 
 .section {
-  position: relative;
   width: 100%;
-  max-width: 700px;
-  height: auto;
-  overflow: visible;
+  // background-color: red;
+  max-width: 600px;
+  display: flex;
+  overflow: scroll !important;
+  height: calc(100vh - 20vh);
+  padding: 20vh 0px;
   margin: 0 auto;
+  z-index: 10;
+  div:last-child {
+    align-self: center;
+    // background-color: blue;
+  }
       h1 {
-        width: 50px;
         animation: header 150s linear;
         animation-play-state: paused;
         animation-delay: calc(var(--scroll) * -1s);
         animation-iteration-count: 1;
         animation-fill-mode: both;
-        width: 100%;
-        // text-align: center;
-        font-size: 4rem;
+        font-size: 3.5rem;
+        line-height: 3.5rem;
         // font-weight: 800;
         color: rgba(0, 0, 0, 0.8);
-        margin-bottom: 15vh;
-        div {
-        width: 70%;
-        }
+        // margin-bottom: 15vh;
       }
-      height: calc(100vh - 280px);
-      padding: 40vh 0px;
 }
 .par {
   height: auto;
@@ -43,7 +93,7 @@
 .dos {
   line-height: 28px;
   transform: translateY(200px);
-  animation: slideUp 2s ease-in-out forwards 5s;
+  animation: slideUp 1.8s ease-in-out forwards 1.5s;
 }
 
 @keyframes slideUp {

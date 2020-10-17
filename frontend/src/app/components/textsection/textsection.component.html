@@ -1,16 +1,14 @@
 <!-- <div class="frame-top"></div> -->
-<div id="top" class="progress-container" *ngIf="hasScroll" [@widthIncrease]>
+<div id="top" class="progress-container">
   <div class="progress-bar" id="myBar"></div>
 </div>
-<section class="section">
-  <div class="content col- col-12" (scroll)="onScroll($event)">
+<section class="section" *ngIf="show" [@fadeInFadeOut] (scroll)="onScroll($event)">
           <h1>
             <div>
               {{title}}
             </div>
           </h1>
     <pre id="body-text">{{text}}</pre>
-  </div>
 </section>
 <!-- <div class="footer">
   <div class="gradient" *ngIf="scrolled === 0" [@inOutAnimation]>

@@ -16,36 +16,45 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    let showElements = {
+      change: true
+    }
+    this.transitionDirection.emit(showElements);
   }
 
   nextPage() {
-    // let transitionDirectionObject = {
-    //   offsetEnter: 100,
-    //   offsetLeave: -100
-    // }
-    // this.transitionDirection.emit(transitionDirectionObject);
-    // console.log(transitionDirectionObject);
+    let showElements = {
+      change: false
+    }
+    this.transitionDirection.emit(showElements);
     if (this.pageNumber < this.textList.length) {
       this.pageNumber++;
-      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      setTimeout(() => {
+        this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      }, 500);
     } else {
       this.pageNumber = 1
-      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      setTimeout(() => {
+        this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      }, 500);
     }
   }
 
   previousPage() {
-    let transitionDirectionObject = {
-      offsetEnter: -100,
-      offsetLeave: 100
+    let showElements = {
+      change: false
     }
-    this.transitionDirection.emit(transitionDirectionObject);
+    this.transitionDirection.emit(showElements);
     if (this.pageNumber == 1) {
       this.pageNumber = this.textList.length
-      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      setTimeout(() => {
+        this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      }, 500);
     } else {
       this.pageNumber--
-      this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      setTimeout(() => {
+        this.router.navigateByUrl(`scripts/${this.pageNumber}`)
+      }, 500);
     }
   }
 }

@@ -29,8 +29,7 @@ h1 {
 }
 .flex-container {
   justify-content: center;
-  margin-top: 15vh;
-  // min-height: 50vh;
+  margin-top: 25vh;
   display: flex;
   flex-direction: row;
 }
@@ -45,8 +44,6 @@ h1 {
   min-width: 200px;
   padding: 2rem;
   width: 45%;
-  align-self: flex-end;
-  margin-top: 10vh;
 }
 
 
@@ -172,8 +169,8 @@ textarea {
   overflow: hidden;
 }
 .title {
-  transform: translateY(-300px);
-  animation: slideDown 1s ease-in-out forwards .8S;
+  transform: translateX(-500px);
+  animation: slideDown 1s ease-in-out forwards .5s;
 }
 // .subtitle {
 //   transform: translateY(150px);
@@ -193,9 +190,9 @@ textarea {
 }
 @keyframes slideDown {
   0% {
-    transform: translateY(-200px);
+    transform: translateX(-500px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
 }

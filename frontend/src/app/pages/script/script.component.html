@@ -1,12 +1,12 @@
-
 <app-menu-fullscreen></app-menu-fullscreen>
 <app-left-sidebar></app-left-sidebar>
-
-<app-sidebar [textList]="textList" [pageNumber]="pageNumber"
-  (transitionDirection)="setAnimationParams($event)"></app-sidebar>
-
-<div id="body" class="container">
-  <app-textsection  [title]="textList[scriptPosition].title" [text]="textList[scriptPosition].text"
-    [bgColor]="textList[scriptPosition].bgColor || '#999563'" [textColor]="textList[scriptPosition].textColor || '#FFF'" [date]="textList[scriptPosition].date">
+<app-sidebar [textList]="textList" [pageNumber]="pageNumber" (transitionDirection)="setAnimationParams($event)">
+</app-sidebar>
+<div class="waterpage">
+  <!-- 0 {{pageNumber}} -->
+  0<b *ngIf="show" [@inOutAnimation]>{{pageNumber}}</b>
+</div>
+<div class="container">
+  <app-textsection [title]="textList[scriptPosition].title" [text]="textList[scriptPosition].text" [show]="show">
   </app-textsection>
 </div>

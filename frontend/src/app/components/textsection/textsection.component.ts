@@ -1,64 +1,33 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
+
 @Component({
   selector: 'app-textsection',
   templateUrl: './textsection.component.html',
-  styleUrls: ['./textsection.component.scss'],
   animations: [
-    trigger(
-      'inOutAnimation',
-      [
-        transition(
-          ':enter',
-          [
-            style({ opacity: 0 }),
-            animate('0.3s ease-out',
-              style({ opacity: 1 }))
-          ]
-        ),
-        transition(
-          ':leave',
-          [
-            style({ opacity: 1 }),
-            animate('0.7s ease-in',
-              style({ opacity: 0 }))
-          ]
-        )
-      ]
-    ),
-    trigger(
-      'widthIncrease',
-      [
-        transition(
-          ':enter',
-          [
-            style({ width: '0%'}),
-            animate('1s ease-in-out',
-              style({ width: '100%'}))
-          ]
-        ),
-        transition(
-          ':leave',
-          [
-            style({ width: '100%' }),
-            animate('0.5s ease-in',
-              style({ width: '0%' }))
-          ]
-        )
-      ]
-    )
+    trigger('fadeInFadeOut', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.4s ease-in-out',
+          style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('0.4s ease-in-out',
+          style({ opacity: 0 }))
+      ]),
+    ]),
 
-  ]
+  ],
+  styleUrls: ['./textsection.component.scss'],
 })
 
 export class TextsectionComponent implements OnInit {
 
   @Input() title: string;
   @Input() text: string;
-  @Input() bgColor: string;
-  @Input() textColor: string;
-  @Input() date: string;
+  @Input() show: boolean;
+
   height;
   scrolled = 0;
   hasScroll;
@@ -92,7 +61,6 @@ export class TextsectionComponent implements OnInit {
     //SCROLL ANIMATION VAR TO BIND BOTH
     document.body.style.setProperty('--scroll', `${winScroll}`);
   }
-
 }
 
 
