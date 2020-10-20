@@ -31,12 +31,12 @@ export class SidebarComponent implements OnInit {
       this.pageNumber++;
       setTimeout(() => {
         this.router.navigateByUrl(`scripts/${this.pageNumber}`)
-      }, 500);
+      }, 600);
     } else {
       this.pageNumber = 1
       setTimeout(() => {
         this.router.navigateByUrl(`scripts/${this.pageNumber}`)
-      }, 500);
+      }, 600);
     }
   }
 
@@ -49,12 +49,12 @@ export class SidebarComponent implements OnInit {
       this.pageNumber = this.textList.length
       setTimeout(() => {
         this.router.navigateByUrl(`scripts/${this.pageNumber}`)
-      }, 500);
+      }, 600);
     } else {
       this.pageNumber--
       setTimeout(() => {
         this.router.navigateByUrl(`scripts/${this.pageNumber}`)
-      }, 500);
+      }, 600);
     }
   }
 }

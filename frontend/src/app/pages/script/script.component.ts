@@ -10,28 +10,15 @@ import { SectionInfo } from '../../classes/section-info'
     trigger('inOutAnimation', [
       transition(':enter', [
         style({ position: 'absolute', opacity: 0, transform: 'translateY(-100px)' }),
-        animate('0.4s ease-in-out',
+        animate('.6s ease-in-out',
           style({ opacity: 1, transform: 'translateY(0px)' }))
       ]),
       transition(':leave', [
         style({ position: 'absolute', opacity: 1, transform: 'translateY(0px)' }),
-        animate('0.4s ease-in-out',
+        animate('.6s ease-in-out',
           style({ opacity: 0, transform: 'translateY(-100px)' }))
       ]),
-    ]),
-    trigger('fadeInFadeOut', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('0.4s ease-in-out',
-          style({ opacity: 1 }))
-      ]),
-      transition(':leave', [
-        style({ opacity: 1 }),
-        animate('0.4s ease-in-out',
-          style({ opacity: 0 }))
-      ]),
-    ]),
-
+    ])
   ],
   styleUrls: ['./script.component.scss']
 })
@@ -93,7 +80,7 @@ export class ScriptComponent implements OnInit {
       },
       {
         title: `¿Quién es David?`,
-        text: 'David es un astronauta tropical. \nLe gusta explorar y el mar. \nA veces viste raro. \nBaila en la ducha. \nDesayuna tortitas cada día. \nPrefiere el café solo. \nPatina. \nMira al cielo a menudo. \nSe enamora de colores. \nMedita. \nColecciona libretas. \nEscucha canciones nuevas. \nMadruga para coger olas. \nSe mira en el reflejo de los escaparates \nCocina peor de lo que cree. \nEs flexible. \nLe encanta oír historias. \nSuele olvidar la mascarilla al salir. \n\nY se me da fatal hablar sobre mí.',
+        text: 'David es un astronauta tropical. Le gusta explorar y el mar. \nA veces viste raro. Baila en la ducha. \nDesayuna tortitas cada día. Prefiere el café solo. \nPatina. Mira al cielo a menudo. \nSe enamora de colores. Medita. \nColecciona libretas. Escucha canciones nuevas. \nMadruga para coger olas. Se mira en el reflejo de los escaparates \nCocina peor de lo que cree. Es flexible. \nLe encanta oír historias. Suele olvidar la mascarilla al salir. \n\nY se me da fatal hablar sobre mí.',
         bgColor: '#01623D',
         textColor: '#EFAF2F',
         date: '05 de Agosto de 2020'

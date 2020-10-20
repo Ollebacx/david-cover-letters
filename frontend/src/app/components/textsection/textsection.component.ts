@@ -1,23 +1,58 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { trigger, transition, style, animate, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-textsection',
   templateUrl: './textsection.component.html',
   animations: [
-    trigger('fadeInFadeOut', [
+    // trigger('fadeInFadeOut', [
+    //   transition(':enter', [
+    //     style({ opacity: 0 }),
+    //     animate('.6s 0.2s ease-in-out',
+    //       style({ opacity: 1 }))
+    //   ]),
+    //   transition(':leave', [
+    //     style({ opacity: 1 }),
+    //     animate('.5s .3s linear',
+    //       style({ opacity: 0 }))
+    //   ]),
+    // ]),
+    // trigger('title', [
+    //   transition(':enter', [
+    //     style({ transform: 'translateY(150px)' }),
+    //     animate('.6s ease-in-out',
+    //       style({ transform: 'translateY(0px)' }))
+    //   ]),
+    //   transition(':leave', [
+    //     style({ transform: 'translateY(0px)' }),
+    //     animate('.5s .2s ease-in-out',
+    //       style({ transform: 'translateY(150px)' }))
+    //   ]),
+    // ]),
+    trigger('text', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('0.4s ease-in-out',
+        animate('.6s ease-in-out',
           style({ opacity: 1 }))
       ]),
       transition(':leave', [
         style({ opacity: 1 }),
-        animate('0.4s ease-in-out',
+        animate('.6s ease-in-out',
           style({ opacity: 0 }))
       ]),
     ]),
-
+    trigger('title', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('.6s ease-in-out',
+          style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('.6s ease-in-out',
+          style({ opacity: 0 }))
+      ]),
+    ]),
   ],
   styleUrls: ['./textsection.component.scss'],
 })
