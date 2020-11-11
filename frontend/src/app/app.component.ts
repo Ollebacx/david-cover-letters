@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { SectionInfo } from './classes/section-info'
+import { SectionInfo } from './classes/section-info';
 import { map, mapTo, filter, switchMap, tap, startWith, pairwise } from 'rxjs/operators';
-import { slideInAnimation } from './animations/animation'
-import { UrlService } from "./shared/url.service";
+import { slideInAnimation } from './animations/animation';
+import { UrlService } from './shared/url.service';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +15,8 @@ import { UrlService } from "./shared/url.service";
 })
 export class AppComponent implements OnInit {
   title = 'frontend';
-  offsetEnter: number = 100
-  offsetLeave: number = -100
+  offsetEnter = 100;
+  offsetLeave = -100;
   previousUrl: string = null;
   currentUrl: string = null;
 
@@ -28,20 +28,20 @@ export class AppComponent implements OnInit {
       this.previousUrl = this.currentUrl;
       this.currentUrl = event.url;
       this.urlService.setPreviousUrl(this.previousUrl);
-    })
+    });
   }
 
-  prepareRoute(outlet) {
+  prepareRoute(outlet): void {
     // console.log(outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation);
     // if (outlet.activatedRoute.snapshot.params.id) {
     //   return  outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
     // } else {
     console.log(outlet);
-      return outlet.activatedRouteData.animation;
+    return outlet.activatedRouteData.animation;
     }
   // }
 
-  setAnimationParams(transitionDirection) {
+  setAnimationParams(transitionDirection): void {
     this.offsetEnter = transitionDirection.offsetEnter;
     this.offsetLeave = transitionDirection.offsetLeave;
   }
