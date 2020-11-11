@@ -1,13 +1,13 @@
- #body{
-  --background: #ecf1f8;
-  --gray: #a5b1c6;
-  background-color: var(--background);
+ #body {
+     background-color: var(--background);
+     height: 100%;
  }
+ 
  .footer {
-   width: 100%;
-   background-color: white;
-   height: 5px;
-   position: fixed;
-   bottom: 0;
-   z-index: 2000;
-   }
+     width: 100%;
+     background-color: white;
+     height: 5px;
+     position: fixed;
+     bottom: 0;
+     z-index: 2000;
+ }
