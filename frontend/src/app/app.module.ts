@@ -16,8 +16,6 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { HomeComponent } from './pages/home/home.component';
 import { ScriptComponent } from './pages/script/script.component';
 import { ContactComponent } from './pages/contact/contact.component';
-// SERVICES
-import { ContactService } from './shared/contact.service'
 
 @NgModule({
   declarations: [
@@ -39,7 +37,6 @@ import { ContactService } from './shared/contact.service'
     FormsModule,
     HttpClientModule
   ],
-  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

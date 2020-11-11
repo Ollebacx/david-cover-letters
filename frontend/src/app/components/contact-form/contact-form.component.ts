@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ContactService } from 'src/app/shared/contact.service';
 import { trigger, state, animate, transition, style } from '@angular/animations'
 
 @Component({
@@ -63,7 +62,7 @@ export class ContactFormComponent implements OnInit {
   message: string = `Hola David, ¿cómo va? \n\nTe escribo para contarte que...`;
   isSent: boolean = false;
 
-  constructor(public router: Router, private contact: ContactService) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
