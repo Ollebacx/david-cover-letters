@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     // if (outlet.activatedRoute.snapshot.params.id) {
     //   return  outlet.activatedRoute.snapshot.params.id; //apply animation when route params id changes
     // } else {
-    console.log(outlet);
+    // console.log(outlet);
     return outlet.activatedRouteData.animation;
     }
   // }
