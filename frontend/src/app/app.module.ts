@@ -16,6 +16,8 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { HomeComponent } from './pages/home/home.component';
 import { ScriptComponent } from './pages/script/script.component';
 import { ContactComponent } from './pages/contact/contact.component';
+// SERVICE
+import { ResizeService } from './shared/resize.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     FormsModule,
     HttpClientModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ResizeService]
 })
 export class AppModule { }
